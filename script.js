@@ -22,6 +22,17 @@ var imageOverlay = L.imageOverlay('images/dia.png', bounds).addTo(map);
 map.setMaxBounds(bounds);
 map.fitBounds(bounds);
 
+var greenIcon = L.icon({
+    iconUrl: 'icon.png',
+    shadowUrl: 'icon.png',
+
+    iconSize:     [64, 64], // size of the icon
+    shadowSize:   [64, 64], // size of the shadow
+    iconAnchor:   [22, 64], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 64],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
 // Capas para marcadores y regiones
 var markerLayer = L.layerGroup().addTo(map);
 var regionLayer = L.layerGroup().addTo(map);
@@ -50,7 +61,7 @@ map.on('click', onMapClick);
 
 // Agregar marcadores al mapa y a la lista
 markers.forEach(function(markerObj) {
-    var marker = L.marker(markerObj.latlng).addTo(markerLayer);
+    var marker = L.marker(markerObj.latlng, {icon: greenIcon}).addTo(markerLayer); 
     marker.bindPopup(markerObj.name);
     markerObj.marker = marker;
 
