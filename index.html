@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Mapa de Minecraft</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <input type="text" id="search-input" placeholder="Buscar marcador...">
+        <button id="search-button">Buscar</button>
+        <select id="map-select">
+            <option value="images/mapa.png">Mapa 1</option>
+            <option value="images/mapa2.png">Mapa 2</option>
+        </select>
+    </div>
+    <div class="map-container">
+        <div id="map"></div>
+        <div id="marker-list" class="sidebar">
+            <h2>Marcadores</h2>
+            <ul id="marker-list-items"></ul>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

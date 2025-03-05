@@ -1,0 +1,58 @@
+body {
+    background-color: #333;
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.top-bar {
+    background-color: #222;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.top-bar button, .top-bar select, .top-bar input {
+    margin: 0 10px;
+    padding: 8px 15px;
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.map-container {
+    display: flex;
+    flex-grow: 1;
+    width: 100%; /* Asegurar que el contenedor ocupe todo el ancho */
+}
+
+#map {
+    height: 100%;
+    flex-grow: 1; /* Permitir que el mapa ocupe todo el espacio disponible */
+}
+
+.sidebar {
+    background-color: #444;
+    color: white;
+    width: 200px; /* Ajustar el ancho de la barra lateral a un valor fijo */
+    padding: 10px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background-color: #555;
+}
