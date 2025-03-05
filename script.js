@@ -6,6 +6,8 @@ var map = L.map('map', {
     maxZoom: 5,
 });
 
+var map = L.map('map').setView([51.505, -0.09], 13);
+
 // Dimensiones de la imagen del mapa (reemplaza con las tuyas)
 var imgWidth = 4984;
 var imgHeight = 4352;
@@ -22,7 +24,7 @@ var imageOverlay = L.imageOverlay('images/dia.png', bounds).addTo(map);
 map.setMaxBounds(bounds);
 map.fitBounds(bounds);
 
-var greenIcon = L.icon({
+var Icon = L.icon({
     iconUrl: 'icon.png',
     shadowUrl: 'icon.png',
 
@@ -39,7 +41,7 @@ var regionLayer = L.layerGroup().addTo(map);
 
 // Marcadores y regiones predefinidos
 var markers = [
-    { name: "Ciudad Principal", latlng: map.unproject([500, 1000], map.getMaxZoom()) },
+    { name: "Ciudad Principal", latlng: map.unproject([500, 1000], map.getMaxZoom(), {icon: Icon}) },
     { name: "Montaña Alta", latlng: map.unproject([1500, 500], map.getMaxZoom()) },
     // Agrega más marcadores aquí
 ];
@@ -61,7 +63,7 @@ map.on('click', onMapClick);
 
 // Agregar marcadores al mapa y a la lista
 markers.forEach(function(markerObj) {
-    var marker = L.marker(markerObj.latlng, {icon: greenIcon}).addTo(markerLayer); 
+    var marker = L.marker(markerObj.latlng, {icon: Icon}).addTo(markerLayer); 
     marker.bindPopup(markerObj.name);
     markerObj.marker = marker;
 
