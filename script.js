@@ -37,6 +37,17 @@ var regions = [
     // Agrega regiones aquí (por ejemplo, polígonos)
 ];
 
+var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+}
+
+map.on('click', onMapClick);
+
 // Agregar marcadores al mapa y a la lista
 markers.forEach(function(markerObj) {
     var marker = L.marker(markerObj.latlng).addTo(markerLayer);
