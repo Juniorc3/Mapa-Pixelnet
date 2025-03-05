@@ -2,13 +2,13 @@
 // Inicializar el mapa
 var map = L.map('map', {
     crs: L.CRS.Simple,
-    minZoom: -5,
+    minZoom: 0,
     maxZoom: 5,
 });
 
 // Dimensiones de la imagen del mapa (reemplaza con las tuyas)
-var imgWidth = 2048;
-var imgHeight = 2048;
+var imgWidth = 4984;
+var imgHeight = 4352;
 
 // Coordenadas de la imagen del mapa
 var southWest = map.unproject([0, imgHeight], map.getMaxZoom());
@@ -16,7 +16,7 @@ var northEast = map.unproject([imgWidth, 0], map.getMaxZoom());
 var bounds = new L.LatLngBounds(southWest, northEast);
 
 // Añadir la imagen del mapa
-var imageOverlay = L.imageOverlay('images/mapa.png', bounds).addTo(map);
+var imageOverlay = L.imageOverlay('images/dia.png', bounds).addTo(map);
 
 // Establecer los límites y el zoom inicial
 map.setMaxBounds(bounds);
@@ -46,7 +46,7 @@ markers.forEach(function(markerObj) {
     var listItem = document.createElement('li');
     listItem.textContent = markerObj.name;
     listItem.addEventListener('click', function() {
-        map.flyTo(markerObj.latlng, map.getMaxZoom() - 2);
+        map.flyTo(markerObj.latlng, map.getMaxZoom() - -1);
         marker.openPopup();
     });
     document.getElementById('marker-list-items').appendChild(listItem);
@@ -73,6 +73,6 @@ document.getElementById('search-button').addEventListener('click', function() {
     });
 
     if (foundMarker) {
-        map.flyTo(foundMarker.latlng, map.getMaxZoom() - 2);
+        map.flyTo(foundMarker.latlng, map.getMaxZoom() - -2);
     }
 });
