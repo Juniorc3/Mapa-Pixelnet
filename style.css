@@ -33,13 +33,13 @@ body {
     height: 100%;
     flex-grow: 1; /* Permitir que el mapa ocupe todo el espacio disponible */
 border-radius: 12px;
-border: solid 4px
+border: solid 4px;
 }
 
 .sidebar {
     background-color: #444;
     color: white;
-    width: 200px; /* Ajustar el ancho de la barra lateral a un valor fijo */
+    width: 150px; /* Ajustar el ancho de la barra lateral a un valor fijo */
     padding: 10px;
     height: 100%;
     overflow-y: auto;
