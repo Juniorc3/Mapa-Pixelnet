@@ -32,6 +32,8 @@ body {
 #map {
     height: 100%;
     flex-grow: 1; /* Permitir que el mapa ocupe todo el espacio disponible */
+border-radius: 12px;
+border: solid 4px
 }
 
 .sidebar {
